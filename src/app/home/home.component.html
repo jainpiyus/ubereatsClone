@@ -1,0 +1,54 @@
+<div class="home-container">
+    <ng-container *ngIf="restaurants.length < 1">
+        <div class="card-container">
+            <skltn-root class="card" duration="1000" [rectRadius]="10" flareWidth="50%" bgFill="#d8d5d1"
+                flareFill="rgba(255,255,255, 0.5)" *ngFor="let item of loaderRestaurant">
+                <!-- Card with Avatar -->
+                <div class="skltn-card">
+                    <div skltn-bone class="skltn-card__avatar" type="circle"></div>
+                    <div class="skltn-card__body">
+                        <div skltn-bone class="skltn-card__title"></div>
+                        <div skltn-bone class="skltn-card__line"></div>
+                        <div skltn-bone class="skltn-card__line"></div>
+                    </div>
+                </div>
+            </skltn-root>
+        </div>
+    </ng-container>
+    <ng-container *ngFor="let item of restaurants">
+        <div style="margin: 20px 0px 0px 10px;">
+            <span style="font-size: 26px; font-weight: 600;">{{item.name}}</span>
+        </div>
+        <div class="card-container">
+            <div class="card" *ngFor="let restaurant of item.list" (click)="goToRestaurant(10)">
+                <div class="img-box">
+                    <img [src]="restaurant.image" width="350px" height="240px" data-selected="true" data-label-id="0">
+                </div>
+                <div class="details-box">
+                    <div>
+                        <span style="font-weight: 600;">{{restaurant.name}}</span>
+                    </div>
+                    <div style="margin-top: 5px;">
+                        <label>₹₹</label>
+                        &bull;
+                        <label *ngFor="let type of restaurant.foodType; let i = index">{{type}} <span
+                                style="margin: 0px 5px;"
+                                *ngIf="i < restaurant.foodType.length - 1">&bull;</span></label>
+                    </div>
+                    <div style="margin-top: 5px;">
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>{{restaurant.timing}}</mat-chip>
+                            <mat-chip>
+                                {{restaurant.ratingPoints}} <img
+                                    src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/972e1cb487b3a5c72c30a6635596f477.svg">
+                                (500+)
+                            </mat-chip>
+                        </mat-chip-list>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,36 @@
+<div class="scheduled-model-container">
+  <div class="model-header">
+    <h2>Schedule delivery time</h2>
+    <button mat-mini-fab color="default">
+      <mat-icon fontSet="material-icons-outlined" mat-icon-button class="icon" (click)="onNoClick()">close</mat-icon>
+    </button>
+  </div>
+  <div class="model-body">
+    <div class="dropdown">
+      <h4>Date</h4>
+      <mat-form-field floatLabel="never" class="full-width">
+        <mat-select [(ngModel)]="data.deliveryDate">
+          <mat-option *ngFor="let date of dates" [value]="date">
+            {{date}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="dropdown">
+      <h4>Time</h4>
+      <mat-form-field floatLabel="never" class="full-width">
+        <mat-select [(ngModel)]="data.deliveryTime">
+          <mat-option *ngFor="let time of times" [value]="time">
+            {{time}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="model-footer">
+    <button mat-raised-button class="full-width full-height success-background" [mat-dialog-close]="data"
+      cdkFocusInitial>
+      Set delivery time
+    </button>
+  </div>
+</div>

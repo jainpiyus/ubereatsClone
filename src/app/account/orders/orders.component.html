@@ -1,0 +1,37 @@
+<h1>Past orders</h1>
+<ng-container *ngIf="orders.length < 1">
+        <skltn-root class="card" duration="1000" [rectRadius]="10" flareWidth="50%" bgFill="#d8d5d1"
+            flareFill="rgba(255,255,255, 0.5)" *ngFor="let item of loader">
+            <!-- Card with Avatar -->
+            <div class="skltn-card">
+                <div skltn-bone class="skltn-card__avatar" type="circle"></div>
+                <div class="skltn-card__body">
+                    <div skltn-bone class="skltn-card__title"></div>
+                    <div skltn-bone class="skltn-card__line"></div>
+                    <div skltn-bone class="skltn-card__line"></div>
+                </div>
+            </div>
+        </skltn-root>
+</ng-container>
+<div class="order-box" *ngFor="let order of orders">
+    <div class="img-box">
+        <img [src]="order.image" width="250" height="120">
+    </div>
+    <div class="detail-box">
+        <div style="margin-bottom: 5px;"><span style="font-size: 18px; font-weight: 600;">{{order.name}}</span></div>
+        <label>{{order.meals.length}} items for ₹ {{order.totalPrice}} • {{order.time}}</label>
+        <ul style="margin-top: 15px;">
+            <li style="margin-bottom: 10px;" class="flex-item-center" *ngFor="let meal of order.meals">
+                <div class="border-box">{{meal.quantity}}</div>
+                <div class="very-small-gap"></div>
+                <span>{{meal.name}}</span>
+            </li>
+
+        </ul>
+    </div>
+    <div style="flex: 1; margin-left: 40px;">
+        <button mat-raised-button class="full-width full-height success-background " style="height: 45px;">
+            Reorder
+        </button>
+    </div>
+</div>

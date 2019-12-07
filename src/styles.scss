@@ -1,0 +1,320 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.2px;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: black;
+}
+h1,h2,h3,h4{
+    font-weight: 600;
+    margin: 0;
+}
+a{
+    color: rgb(62, 153, 32);
+}
+h2{
+    font-size: 20px;
+    margin: 0;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+li{
+    display: list-item;
+    outline: none;
+}
+li:active{
+    outline: none;
+}
+
+mat-icon{
+    cursor: pointer;
+    
+}
+
+.active {
+    outline: none;
+}
+span{
+    font-size: 16px;
+    font-weight: inherit;
+}
+label{
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.no-padding{
+    padding: 0;
+}
+.no-margin{
+    margin: 0;
+}
+.padding-horizontaly{
+    padding: 0px 20px;
+}
+.padding {
+    padding: 20px;
+}
+.micro-gap{
+    width: 5px;
+}
+.very-small-gap{
+    width: 10px;
+}
+.small-gap{
+    width: 20px;
+}
+.medium-gap{
+    width: 40px;
+}
+.large-gap{
+    width: 60px;
+}
+.very-large-gap{
+    width: 80px;;
+}
+
+.success{
+    color: rgb(62, 153, 32);
+}
+.full-height{
+    height: 100%;
+}
+.full-width{
+    width: 100%;
+}
+.flex-item-center{
+    display: flex;
+    align-items: center;
+}
+.flex-only{
+    display: flex;
+    align-items: baseline;
+}
+.reverse-flex{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-with-space-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flext1{
+    flex: 1;
+}
+.flext2{
+    flex: 2;
+}
+.flext3{
+    flex: 3;
+}
+.flext4{
+    flex: 4;
+}
+
+.white-background{
+    background: #fff;
+}
+.success-background{
+    background: rgb(62, 153, 32);
+    color: white;
+}
+.success-outline{
+    border: 1px solid rgb(62, 153, 32) !important;
+    color: rgb(62, 153, 32) !important;
+}
+.success-outline:hover{
+    background: rgb(62, 153, 32);
+    color: white !important;
+}
+button{
+    border-radius: 0 !important;
+    font-size: 14px !important;
+}
+
+
+.pointer{
+    cursor: pointer;
+}
+
+.mat-select-arrow { visibility: hidden; }
+
+.mat-form-field {
+    transition: 1s;
+}
+.mat-form-field:active, :checked{
+    transform: scaleX(100px);
+}
+.mat-option{
+    line-height: 25px !important;
+}
+.mat-standard-chip{
+    border-radius: 0 !important;
+    min-height: 25px !important;
+    font-size: 13px;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid lightgray;
+    padding: 30px 0px;
+}
+.card{
+    width: 350px;
+    cursor: pointer;
+   // border: 1px solid;
+    margin: 10px;
+    margin-bottom: 20px;
+    .details-box{
+        margin-top: 10px;
+    }
+}
+
+
+.second-view{
+    background: darkslategray;
+    min-height: 40vh;
+    .secondary-container-header{
+        height: 130px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        .header-text{
+            padding: 0px 10px;
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+            .primary-text{
+                font-size: 32px;
+                font-weight: 600;
+                text-transform: capitalize;
+            }
+            .secondary-text{
+                margin-top: 2px;
+                font-size: 16px;
+            }
+        }
+    }    
+    .body{
+        background: #fff;
+        margin-top: 35px;
+        padding: 55px;
+        display: flex;
+        .list-view{
+            flex: 1;
+            .list-box{
+                min-height: 400px;
+                min-width: 260px;
+                background: #edf1f7;
+                padding: 15px 0px;
+                position: sticky;
+                top: 111px;
+               .item{
+                    padding: 25px 20px;
+                    margin-left: 20px;
+                    cursor: pointer;
+                    display: flex;
+                    position: relative;
+                    .text{
+                        margin-left: 40px;
+                        font-size: 16px;
+                        color: black;
+                        font-weight: 500;
+                    }
+                    
+               }
+               .item:hover .text{
+                    font-weight: 600;
+               }
+               .item.active_item{
+                     background: #fff;
+                }
+            }
+        }
+        .result-view{
+            flex: 4;
+            margin-left: 10px;
+            .result-box{
+                padding: 30px;
+                .result-header{
+                    font-size: 24px;
+                    font-weight: 600;
+                    margin-left: 20px;
+                }
+                .expand-pannel{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+.anchorActive{
+    border-bottom: 2px solid black !important;
+}
+.mat-mini-fab {
+    border-radius: 50% !important;
+}
+.mat-dialog-container{
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+.cart-card{
+    width: 420px !important;
+    .cart-card-header{
+        height: 60px;
+        border-bottom: 1px solid lightgray;
+    }
+    .cart-card-body{
+        max-height: 200px;
+        overflow: auto;
+    }
+    .cart-card-footer{
+        height: 60px;
+    }
+}
+
+
+  .skltn-card {
+    margin: 20px 0 48px;
+  }
+  .skltn-card__avatar {
+    width: 60px;
+    height: 60px; /* <-- Don't forget height */
+    margin-bottom: 20px;
+  }
+  .skltn-card__title {
+    height: 32px;
+    margin-bottom: 20px;
+  }
+  .skltn-card__line {
+    height: 20px;
+    margin-bottom: 20px;
+  }
+  .skltn-card__line:last-child {
+    width: 60%;
+  }

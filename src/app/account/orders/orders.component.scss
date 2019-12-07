@@ -1,0 +1,14 @@
+.order-box{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    padding: 20px 0px;
+    .detail-box{
+        margin-left: 20px;
+        .border-box {
+            border: 1px solid lightgray;
+            width: 20px;
+            text-align: center;
+            height: 20px;
+        }
+    }
+}

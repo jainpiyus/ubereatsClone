@@ -1,0 +1,13 @@
+.login-container{
+    margin-top: 100px;
+    width: 100%;
+    min-height: 450px;
+    .body{
+        position: absolute;
+        top: 15%;
+        left: 32%;;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+}

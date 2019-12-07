@@ -1,0 +1,49 @@
+<h1>Favourites</h1>
+
+<ng-container *ngIf="restaurants.length < 1">
+    <div class="card-container">
+        <skltn-root class="card" duration="1000" [rectRadius]="10" flareWidth="50%" bgFill="#d8d5d1"
+            flareFill="rgba(255,255,255, 0.5)" *ngFor="let item of loader">
+            <!-- Card with Avatar -->
+            <div class="skltn-card">
+                <div skltn-bone class="skltn-card__avatar" type="circle"></div>
+                <div class="skltn-card__body">
+                    <div skltn-bone class="skltn-card__title"></div>
+                    <div skltn-bone class="skltn-card__line"></div>
+                    <div skltn-bone class="skltn-card__line"></div>
+                </div>
+            </div>
+        </skltn-root>
+    </div>
+</ng-container>
+<div class="card-container" *ngIf="restaurants.length > 0">
+    <div class="card" *ngFor="let restaurant of restaurants[0].list">
+        <div class="img-box">
+            <img [src]="restaurant.image" width="350px" height="240px" data-selected="true" data-label-id="0">
+        </div>
+        <div class="details-box">
+            <div>
+                <span style="font-weight: 600;">{{restaurant.name}} <span *ngIf="restaurant.area">-
+                        {{restaurant.area}} </span></span>
+            </div>
+            <div style="margin-top: 5px;">
+                <label>₹₹</label>
+                &bull;
+                <label *ngFor="let type of restaurant.foodType; let i = index">{{type}}<span
+                        *ngIf="i < restaurant.foodType.length-1" style="margin: 0px 5px;">&bull;</span></label>
+            </div>
+            <div style="margin-top: 5px;">
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip>{{restaurant.timing}}</mat-chip>
+                    <mat-chip>
+                        {{restaurant.ratingPoints}} <img
+                            src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/972e1cb487b3a5c72c30a6635596f477.svg">
+                        (500+)
+                    </mat-chip>
+                </mat-chip-list>
+            </div>
+
+        </div>
+    </div> 
+
+</div>

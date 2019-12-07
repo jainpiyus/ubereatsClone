@@ -1,0 +1,429 @@
+{
+  "addresses": [
+    {
+      "icon": "room",
+      "title": "Home",
+      "address": "Marunji Rd, Marunji Village, Hinjawadi",
+      "default": true
+    },
+    {
+      "icon": "work",
+      "title": "Office",
+      "address": "Marunji Rd, Marunji Village, Hinjawadi",
+      "default": false
+    },
+    {
+      "icon": "home",
+      "title": "Home",
+      "address": "Marunji Rd, Marunji Village, Hinjawadi",
+      "default": false
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "name": "Veg Seekh Kebab",
+      "type": "veg",
+      "price": 150,
+      "containt": "Full",
+      "quantity": 4
+    },
+    {
+      "id": 2,
+      "name": "Paneer Tikka",
+      "type": "veg",
+      "price": 250,
+      "containt": "Full",
+      "quantity": 2
+    },
+    {
+      "id": 6,
+      "name": "Spicy Chicken Tondoori Leg",
+      "type": "nonveg",
+      "price": 250,
+      "containt": "Full",
+      "quantity": 5
+    },
+    {
+      "id": 3,
+      "name": "Angara Paneer Tikka",
+      "type": "veg",
+      "price": 150,
+      "containt": "Full",
+      "quantity": 2
+    },
+    {
+      "id": 5,
+      "name": "Tandoori Chicken",
+      "type": "nonveg",
+      "price": 150,
+      "containt": "Full",
+      "quantity": 1
+    },
+    {
+      "id": 10,
+      "name": "Aroma Special Mashroom Biryani",
+      "type": "veg",
+      "price": 250,
+      "containt": "Served With Raita and mirchi ka masala",
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "name": "Mashroom Tikka",
+      "type": "veg",
+      "price": 299,
+      "containt": "Full",
+      "quantity": 2
+    }
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Your Favourites",
+      "list": [
+        {
+          "id": 101,
+          "image": "https://d1ralsognjng37.cloudfront.net/21dee048-f651-41f6-9f24-a7fee046fbf2.jpeg",
+          "name": "Hotal Platinum",
+          "ratingPoints": 3.9,
+          "timing": "30-40 min",
+          "foodType": [
+            "Indian",
+            "Chinese"
+          ]
+        },
+        {
+          "id": 102,
+          "image": "https://d1ralsognjng37.cloudfront.net/097d2aab-d99a-4859-a288-a54f7038983e.jpeg",
+          "name": "A1 Biryani House",
+          "area": "Hinjewadi",
+          "ratingPoints": 4.2,
+          "timing": "20-30 min",
+          "foodType": [
+            "South Indian",
+            "Indian"
+          ]
+        },
+        {
+          "id": 103,
+          "image": "https://d1ralsognjng37.cloudfront.net/67a08fb1-1d62-4504-afab-e9459fcfdd86.jpeg",
+          "name": "Sentosa Multi Cusine Restaurant",
+          "ratingPoints": 4,
+          "timing": "30-40 min",
+          "foodType": [
+            "Chinese"
+          ]
+        },
+        {
+          "id": 104,
+          "image": "https://d1ralsognjng37.cloudfront.net/940a9ff0-3d97-4138-93a1-20f17e4784cb.jpeg",
+          "name": "Tabbu's",
+          "area": "Phase 1",
+          "ratingPoints": 3.9,
+          "timing": "30-40 min",
+          "foodType": [
+            "Indian",
+            "Chinese"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Popular near you",
+      "list": [
+        {
+          "id": 107,
+          "image": "https://d1ralsognjng37.cloudfront.net/e16c10ae-5845-4c12-b99a-2e0475aaee61.jpeg",
+          "name": "Hotal Platinum",
+          "ratingPoints": 3.9,
+          "timing": "30-40 min",
+          "foodType": [
+            "Indian",
+            "Chinese"
+          ]
+        },
+        {
+          "id": 108,
+          "image": "https://d1ralsognjng37.cloudfront.net/e2e92d36-f38b-486b-9f78-582ba6c089b6.jpeg",
+          "name": "A1 Biryani House",
+          "area": "Hinjewadi",
+          "ratingPoints": 4.2,
+          "timing": "20-30 min",
+          "foodType": [
+            "South Indian",
+            "Indian"
+          ]
+        },
+        {
+          "id": 109,
+          "image": "https://d1ralsognjng37.cloudfront.net/6968e803-8177-4a0b-977d-c866d937de42.jpeg",
+          "name": "Sentosa Multi Cusine Restaurant",
+          "ratingPoints": 4,
+          "timing": "30-40 min",
+          "foodType": [
+            "Chinese"
+          ]
+        },
+        {
+          "id": 110,
+          "image": "https://d1ralsognjng37.cloudfront.net/b63f6323-2b06-4a53-9694-877c49bc1a78.jpeg",
+          "name": "Tabbu's",
+          "area": "Phase 1",
+          "ratingPoints": 3.9,
+          "timing": "30-40 min",
+          "foodType": [
+            "Indian",
+            "Chinese"
+          ]
+        },
+        {
+          "id": 111,
+          "image": "https://d1ralsognjng37.cloudfront.net/aec6e2d7-b107-46eb-b700-4138f07ff8fd.jpeg",
+          "name": "A1 Biryani House",
+          "area": "Hinjewadi",
+          "ratingPoints": 4.2,
+          "timing": "20-30 min",
+          "foodType": [
+            "South Indian",
+            "Indian"
+          ]
+        },
+        {
+          "id": 112,
+          "image": "https://d1ralsognjng37.cloudfront.net/e2e92d36-f38b-486b-9f78-582ba6c089b6.jpeg",
+          "name": "Sentosa Multi Cusine Restaurant",
+          "ratingPoints": 4,
+          "timing": "30-40 min",
+          "foodType": [
+            "Chinese"
+          ]
+        }
+      ]
+    }
+  ],
+  "meals": [
+    {
+      "id": 1,
+      "name": "Veg Kebabs",
+      "mealList": [
+        {
+          "id": 1,
+          "name": "Veg Seekh Kebab",
+          "type": "veg",
+          "price": 150,
+          "containt": "Full"
+        },
+        {
+          "id": 2,
+          "name": "Paneer Tikka",
+          "type": "veg",
+          "price": 250,
+          "containt": "Full"
+        },
+        {
+          "id": 3,
+          "name": "Angara Paneer Tikka",
+          "type": "veg",
+          "price": 150,
+          "containt": "Full"
+        },
+        {
+          "id": 4,
+          "name": "Mashroom Tikka",
+          "type": "veg",
+          "price": 299,
+          "containt": "Full"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Non Veg Kebabs",
+      "mealList": [
+        {
+          "id": 5,
+          "name": "Tandoori Chicken",
+          "type": "nonveg",
+          "price": 150,
+          "containt": "Full"
+        },
+        {
+          "id": 6,
+          "name": "Spicy Chicken Tondoori Leg",
+          "type": "nonveg",
+          "price": 250,
+          "containt": "Full"
+        },
+        {
+          "id": 7,
+          "name": "Tangdi Kabeb",
+          "type": "nonveg",
+          "price": 150
+        },
+        {
+          "id": 8,
+          "name": "Kamli Kebab",
+          "type": "nonveg",
+          "price": 299
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Aromas Special Veg Biryanis",
+      "mealList": [
+        {
+          "id": 9,
+          "name": "Aroma Special Veg Biryani",
+          "type": "veg",
+          "price": 150,
+          "containt": "Served With Raita and mirchi ka masala"
+        },
+        {
+          "id": 10,
+          "name": "Aroma Special Mashroom Biryani",
+          "type": "veg",
+          "price": 250,
+          "containt": "Served With Raita and mirchi ka masala"
+        },
+        {
+          "id": 11,
+          "name": "Aroma Special Paneer Biryani",
+          "type": "veg",
+          "price": 290,
+          "containt": "Served With Raita and mirchi ka masala"
+        },
+        {
+          "id": 12,
+          "name": "Aroma Special Checkin Biryani with Bone",
+          "type": "nonveg",
+          "price": 250,
+          "containt": "Served With Raita and mirchi ka masala"
+        },
+        {
+          "id": 13,
+          "name": "Aroma Special Checkin Biryani (Boneless)",
+          "type": "nonveg",
+          "price": 250,
+          "containt": "Served With Raita and mirchi ka masala"
+        },
+        {
+          "id": 14,
+          "name": "Aroma Special Fried Checkin Biryani",
+          "type": "nonveg",
+          "price": 290,
+          "containt": "Served With Raita and mirchi ka masala"
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "image": "https://d1ralsognjng37.cloudfront.net/aec6e2d7-b107-46eb-b700-4138f07ff8fd.jpeg",
+      "name": "A1 Biryani House",
+      "time": "10 Oct at 08:13 pm",
+      "totalPrice": 450,
+      "meals": [
+        {
+          "id": 1,
+          "name": "Veg Seekh Kebab",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "image": "https://d1ralsognjng37.cloudfront.net/21dee048-f651-41f6-9f24-a7fee046fbf2.jpeg",
+      "name": "Hotal Platinum",
+      "time": "20 Oct at 08:13 pm",
+      "totalPrice": 550,
+      "meals": [
+        {
+          "id": 1,
+          "name": "Veg Seekh Kebab",
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Paneer Tikka",
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "name": "Veg Manchurian",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "image": "https://d1ralsognjng37.cloudfront.net/097d2aab-d99a-4859-a288-a54f7038983e.jpeg",
+      "name": "A1 Biryani House",
+      "time": "30 Oct at 08:13 pm",
+      "totalPrice": 450,
+      "meals": [
+        {
+          "id": 1,
+          "name": "Veg Seekh Kebab",
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Paneer Tikka",
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "name": "Veg Manchurian",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "image": "https://d1ralsognjng37.cloudfront.net/67a08fb1-1d62-4504-afab-e9459fcfdd86.jpeg",
+      "name": "Sentosa Multi Cusine Restaurant",
+      "time": "10 Oct at 08:13 pm",
+      "totalPrice": 450,
+      "meals": [
+        {
+          "id": 1,
+          "name": "Veg Seekh Kebab",
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Paneer Tikka",
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "name": "Veg Manchurian",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Aroma's Hyderabad House",
+      "image": "https://d1ralsognjng37.cloudfront.net/21dee048-f651-41f6-9f24-a7fee046fbf2.jpeg",
+      "time": "10 Oct at 08:13 pm",
+      "totalPrice": 450,
+      "meals": [
+        {
+          "id": 1,
+          "name": "Veg Seekh Kebab",
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Paneer Tikka",
+          "quantity": 2
+        }
+      ]
+    }
+  ]
+}

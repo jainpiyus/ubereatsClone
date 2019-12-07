@@ -1,0 +1,22 @@
+<div class="login-container">
+    <div class="body">
+        <div style="width: 100%; text-align: center; margin-bottom: 30px;">
+            <img height="32px"
+                src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/f8f0721f871b3704cce92eb96bc6e504.svg">
+        </div>
+        <h1 style="margin: 40px 0px; width: 100%;">Welcome back</h1>
+        <span>Sign in with your email address or mobile number</span>
+        <div class="login-input-box">
+            <mat-form-field appearance="outline" class="input-box full-width" style="margin-top: 10px;">
+                <mat-label>Mobile number</mat-label>
+                <input matInput placeholder="Mobile number" class="input-text">
+            </mat-form-field>
+        </div>
+        <button mat-raised-button class="full-width full-height success-background " style="height: 45px;" (click)= "login()">
+            Login
+        </button>
+        <div style="text-align: center; margin-top: 15px;">
+            <span>New to Uber? </span> <span><a [routerLink]="['/signup']" routerLinkActive="active">Create an account</a></span>
+        </div>
+    </div>
+</div>

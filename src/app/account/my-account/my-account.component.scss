@@ -1,0 +1,31 @@
+
+.myaccount-container{
+    margin-top: 80px;
+    width: 100%;
+}
+
+.myaccount-container-body{
+    padding: 0 20px;
+}
+
+.edit-button-box{
+    margin: 20px 0px;
+    color: #fff;
+    border: 1px solid #fff;
+    .edit-button-text{
+        border-radius: 0; 
+        width: 100%;
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}
+.edit-button-box:hover{
+    background: #fff;
+    .edit-button-text{
+        color: #37718e;
+        
+    }
+}

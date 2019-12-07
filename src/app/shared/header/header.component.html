@@ -1,0 +1,208 @@
+<div class="header-container" *ngIf="currentRoute !== '/login' &&  currentRoute !== '/signup'">
+    <div class="contain flex-with-space-between white-background">
+        <div class="left-container flex-item-center flex1 full-height">
+            <a class="logo" routerLink="restaurant">
+                <img src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/f8f0721f871b3704cce92eb96bc6e504.svg">
+            </a>
+            <div class="large-gap"></div>
+            <ng-container *ngIf="selectedAddress">
+                <button mat-button (click)="addressButtonToggle()" *ngIf="!inputAddressBoxEnable">
+                    <div class="header-menu-box" style="max-width: 460px;">
+                        <mat-icon fontSet="material-icons-outlined" class="icon">{{selectedAddress.icon}}</mat-icon>
+                        <div class="very-small-gap"></div>
+                        <span class="header-menu-text" style="max-width: 420px;">{{selectedAddress.address}}</span>
+                    </div>
+                </button>
+                <mat-form-field *ngIf="inputAddressBoxEnable" (keyup.enter)="addressButtonToggle()"
+                    style="min-width: 380px; margin-top: 10px; ">
+                    <input matInput type="text" [(ngModel)]="selectedAddress.address" (blur)="addressButtonToggle()"
+                        [matAutocomplete]="auto" style=" padding-bottom: 5px; font-size: 14px;">
+                    <mat-icon fontSet="material-icons-outlined" matPrefix mat-icon-button class="icon"
+                        style="margin-right: 5px;">{{selectedAddress.icon}}</mat-icon>
+                    <button mat-button *ngIf="selectedAddress" matSuffix mat-icon-button aria-label="Clear"
+                        (click)="selectedAddress=''">
+                        <mat-icon style="padding-bottom: 5px;">close</mat-icon>
+                    </button>
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+                        (selectionChange)="deliveryAddressChange($event)">
+                        <mat-option *ngFor="let deliveryAddress of deliveryAddresses" [value]="deliveryAddress.address"
+                            style="height: 80px;">
+                            <div style="display: -webkit-box;">
+                                <mat-icon fontSet="material-icons-outlined" mat-icon-button class="icon"
+                                    style="margin-right: 5px;">{{deliveryAddress.icon}}</mat-icon>
+                                <div class="flex-column">
+                                    <span>{{deliveryAddress.title}}</span>
+                                    <label>{{deliveryAddress.address}}</label>
+                                </div>
+                            </div>
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </ng-container>
+
+            <div class="small-gap"></div>
+            <mat-form-field appearance="none" style="min-width: 190px; margin-top: 10px;">
+                <mat-select [(ngModel)]="selectedDeliveryTime" (selectionChange)="deliveryTimeSelectionChange($event)">
+                    <mat-select-trigger>
+                        <div class="header-menu-box" style="white-space: initial;">
+                            <mat-icon fontSet="material-icons-outlined" class="icon">{{selectedDeliveryTime.icon}}
+                            </mat-icon>
+                            <div class="very-small-gap"></div>
+                            <span class="header-menu-text" *ngIf="selectedDeliveryTime.data">
+                                {{selectedDeliveryTime.data}}
+                            </span>
+                            <span class="header-menu-text" *ngIf="!selectedDeliveryTime.data">
+                                {{selectedDeliveryTime.title}}
+                            </span>
+
+                        </div>
+                    </mat-select-trigger>
+                    <mat-option *ngFor="let time of deliveryTimeSelection" [value]="time">
+                        <mat-icon fontSet="material-icons-outlined" class="icon">{{time.icon}}</mat-icon>{{time.title}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="reverse-flex flex1 full-height">
+            <a mat-button [mdePopoverTriggerFor]="cartPopover" [mdePopoverOffsetX]="0" [mdePopoverOffsetY]="55"
+                mdePopoverTriggerOn="click" *ngIf="cartItems && cartItems.length > 0">
+                <div class="header-menu-box">
+                    <mat-icon fontSet="material-icons-outlined" class="success">work</mat-icon>
+                    <div class="micro-gap"></div>
+                    <span class="header-menu-text success ">{{cartItems.length}}</span>
+                </div>
+            </a>
+            <div class="very-small-gap"></div>
+            <a mat-button *ngIf="user" [mdePopoverTriggerFor]="appPopover" [mdePopoverOffsetX]="-50"
+                [mdePopoverOffsetY]="55" mdePopoverTriggerOn="click">
+                <div class="header-menu-box">
+                    <mat-icon fontSet="material-icons-outlined" class="icon">person</mat-icon>
+                    <div class="very-small-gap"></div>
+                    <span class="header-menu-text">Piyush</span>
+                </div>
+            </a>
+            <div class="very-small-gap"></div>
+            <a mat-button *ngIf="!user" [routerLink]="['/login']" routerLinkActive="active">
+                <div class="header-menu-box">
+                    <mat-icon fontSet="material-icons-outlined" class="icon">person</mat-icon>
+                    <div class="very-small-gap"></div>
+                    <span class="header-menu-text">Login</span>
+                </div>
+            </a>
+            <button mat-button (click)="searchButtonToggle()" *ngIf="!searchInputBoxEnable">
+                <div class="header-menu-box">
+                    <mat-icon fontSet="material-icons-outlined" class="icon">search</mat-icon>
+                    <div class="very-small-gap"></div>
+                    <span class="header-menu-text">Search</span>
+                </div>
+            </button>
+            <mat-form-field style="margin-top: 10px;" *ngIf="searchInputBoxEnable" (keyup.enter)="searchButtonToggle()"
+                floatLabel="never">
+                <input matInput type="text" placeholder="What are you craving" (blur)="searchButtonToggle()"
+                    [matAutocomplete]="auto" style=" padding-bottom: 5px; font-size: 14px;">
+                <mat-icon fontSet="material-icons-outlined" matPrefix mat-icon-button class="icon"
+                    style="margin-right: 5px;">access_time</mat-icon>
+                <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon style="padding-bottom: 5px;">close</mat-icon>
+                </button>
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let food of searchableFoods" [value]="food.title">
+                        <mat-icon fontSet="material-icons-outlined" mat-icon-button class="icon"
+                            style="margin-right: 5px;">{{food.icon}}</mat-icon>
+                        <span>{{food.title}}</span>
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
+<mde-popover #appPopover="mdePopover" [mdePopoverCloseOnClick]="true">
+    <div class="popover">
+        <ul class="profile-dropdown">
+
+            <li [routerLink]="['/my-account/orders']" class="profile-dropdown-item" routerLinkActive="active">
+                <button mat-icon-button color="dark">
+                    <mat-icon fontSet="material-icons-outlined">receipt</mat-icon>
+                </button>
+                Orders
+            </li>
+            <li [routerLink]="['/my-account/favourites']" class="profile-dropdown-item" routerLinkActive="active">
+                <button mat-icon-button color="dark">
+                    <mat-icon fontSet="material-icons-outlined">favorite</mat-icon>
+                </button>
+                Favorites
+            </li>
+            <li [routerLink]="['/my-account/payments']" class="profile-dropdown-item" routerLinkActive="active">
+                <button mat-icon-button color="dark">
+                    <mat-icon fontSet="material-icons-outlined">credit_card</mat-icon>
+                </button>
+                Payment
+            </li>
+            <li [routerLink]="['/my-account/favourites']" class="profile-dropdown-item" routerLinkActive="active">
+                <button mat-icon-button color="dark">
+                    <mat-icon fontSet="material-icons-outlined">help</mat-icon>
+                </button>
+                help
+            </li>
+            <li [routerLink]="['/my-account']" class="profile-dropdown-item" routerLinkActive="active">
+                <button mat-icon-button color="dark">
+                    <mat-icon fontSet="material-icons-outlined">person</mat-icon>
+                </button>
+                Account
+            </li>
+            <li (click)="logout()" class="profile-dropdown-item" style="padding-left: 12px;;">Sign Out</li>
+        </ul>
+    </div>
+</mde-popover>
+<mde-popover #cartPopover="mdePopover" [mdePopoverCloseOnClick]="enableClosePopover">
+    <div class="popover cart-card flex-column" *ngIf="cartItems && cartItems.length > 0">
+        <div class="cart-card-header flex-with-space-between padding-horizontaly">
+            <div class="flex-item-center">
+                <mat-icon fontSet="material-icons-outlined">work_outline</mat-icon>
+                <div class="very-small-gap"></div>
+                <h2>Your Order ({{cartItems.length}})</h2>
+            </div>
+            <mat-icon fontSet="material-icons-outlined" (click)="closeCartPopover()">close</mat-icon>
+        </div>
+        <div class="cart-card-body">
+            <ul>
+                <li class="flex-with-space-between padding" *ngFor="let item of cartItems">
+                    <div class="flex-item-center">
+                        <mat-form-field style="width: 60px; background: rgb(246, 246, 246);" color="dark">
+                            <mat-select style="text-align: center !important;" [(ngModel)]="item.quantity"
+                                (selectionChange)=addToCart(item)>
+                                <mat-option *ngFor="let quantityValue of quantityList" [value]="quantityValue"
+                                    style="margin-left: 5px !important;">
+                                    {{quantityValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class="small-gap"></div>
+                        <div class="flex-column">
+                            <span> {{item.name}} </span>
+                            <a style="margin-top: 5px;" class="success">Edit </a>
+                        </div>
+                    </div>
+                    <span>₹ {{item.quantity * item.price}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="cart-card-footer padding">
+            <button mat-raised-button [routerLink]="['/checkout']" (click)="closeCartPopover()"  class="full-width full-height success-background ">
+                <div class="flex-with-space-between">
+                    <span style="border: 1px solid; width: 30px;">
+                        {{cartItems.length}}
+                    </span>
+                    <span>
+                        Next: Checkout
+                    </span>
+                    <span>
+                        ₹ {{calculateTotalPriceOfCart()}}
+                    </span>
+                </div>
+            </button>
+        </div>
+
+
+    </div>
+</mde-popover>

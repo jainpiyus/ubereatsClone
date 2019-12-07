@@ -1,0 +1,22 @@
+.scheduled-model-container{
+    padding: 20px;
+    .model-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .model-body{
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0px 0px;
+        .dropdown{
+            margin-bottom: 30px;
+        }
+    }
+    .model-footer{
+        height: 50px;
+    }
+}
+.mat-select-arrow {
+    visibility: visible !important;
+}

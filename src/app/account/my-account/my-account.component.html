@@ -1,0 +1,77 @@
+<div class="myaccount-container">
+    <div class="myaccount-container-body second-view">
+        <div class="secondary-container-header">
+            <div class="header-text">
+                <h1 class="primary-text">Piyush Jain</h1>
+                <span class="secondary-text">
+                    <span>9039907701</span>
+                    <span style="margin-left: 20px">jain.a.piyush@gmail.com</span>
+                </span>
+            </div>
+            <div class="edit-button-box">
+                <button mat-raised-button class="edit-button-text">Edit Profile</button>
+            </div>
+        </div>
+        <div class="body">
+            <div class="list-view">
+                <div class="list-box">
+                    <ul>
+                        <li class="item" [ngClass]="{'active_item': currentRoute == 'orders' }" (click)="changeChildRoute('orders')" [routerLink]="['/my-account/orders']" routerLinkActive="active">
+                            <span class="text flex-item-center">
+                                <span style="transform: translateY(2px);">
+                                    <mat-icon fontSet="material-icons-outlined" class="icon">
+                                        all_out
+                                    </mat-icon>
+                                </span>
+                                <span style="margin-left: 10px;">
+                                    Orders
+                                </span>
+                            </span>
+                        </li>
+                        <li class="item" [ngClass]="{'active_item': currentRoute == 'favourites'}" (click)="changeChildRoute('favourites')"  [routerLink]="['/my-account/favourites']" routerLinkActive="active">
+                            <span class="text flex-item-center">
+                                <span style="transform: translateY(2px);">
+                                    <mat-icon fontSet="material-icons-outlined" class="icon">
+                                        favorite_border
+                                    </mat-icon>
+                                </span>
+                                <span style="margin-left: 10px;">
+                                    Favorites
+                                </span>
+                            </span>
+                        </li>
+                        <li class="item" [ngClass]="{'active_item': currentRoute == 'payments'} " (click)="changeChildRoute('payments')"  [routerLink]="['/my-account/payments']" routerLinkActive="active">
+                            <span class="text flex-item-center">
+                                <span style="transform: translateY(2px);">
+                                    <mat-icon fontSet="material-icons-outlined" class="icon">
+                                        payment
+                                    </mat-icon>
+                                </span>
+                                <span style="margin-left: 10px;">
+                                    Payments
+                                </span>
+                            </span>
+                        </li>
+                        <li class="item" [ngClass]="{'active_item': currentRoute == 'addresses'}" (click)="changeChildRoute('addresses')" [routerLink]="['/my-account/addresses']" routerLinkActive="active">
+                            <span class="text flex-item-center">
+                                <span style="transform: translateY(2px);">
+                                    <mat-icon fontSet="material-icons-outlined" class="icon">
+                                        near_me
+                                    </mat-icon>
+                                </span>
+                                <span style="margin-left: 10px;">
+                                    Addresses
+                                </span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="result-view">
+                <div class="result-box">
+                   <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

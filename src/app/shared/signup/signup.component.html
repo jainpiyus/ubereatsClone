@@ -1,0 +1,36 @@
+<div class="signup-container">
+    <div class="body">
+        <div style="width: 100%; text-align: center; margin-bottom: 30px;">
+            <img height="32px"
+                src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/f8f0721f871b3704cce92eb96bc6e504.svg">
+        </div>
+        <span style="margin-bottom: 10px;">Create account with your mobile number and email address</span>
+        <div class="login-input-box">
+            <mat-form-field appearance="outline" class="input-box full-width" >
+                <mat-label>Mobile number</mat-label>
+                <input matInput placeholder="Mobile number" class="input-text">
+            </mat-form-field>
+        </div>
+        <div class="login-input-box">
+            <mat-form-field appearance="outline" class="input-box full-width" >
+                <mat-label>Email address</mat-label>
+                <input matInput placeholder="Email address" class="input-text">
+            </mat-form-field>
+        </div>
+        <div class="login-input-box">
+            <mat-form-field appearance="outline" class="input-box full-width" >
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" class="input-text" type="password">
+            </mat-form-field>
+        </div>
+        <button mat-raised-button class="full-width full-height success-background " style="height: 45px;">
+            Sign up
+        </button>
+        <div style="text-align: center; margin-top: 15px;">
+            <span>Already have an account? </span> 
+            <span>
+                <a [routerLink]="['/login']" routerLinkActive="active">login</a>
+            </span>
+        </div>
+    </div>
+</div>

@@ -6,23 +6,19 @@
             </a>
             <div class="large-gap"></div>
             <ng-container *ngIf="selectedAddress">
-                <button mat-button (click)="addressButtonToggle()" *ngIf="!inputAddressBoxEnable">
+                <button class="hide-mobile-view" mat-button (click)="addressButtonToggle()" *ngIf="!inputAddressBoxEnable">
                     <div class="header-menu-box" style="max-width: 460px;">
                         <mat-icon fontSet="material-icons-outlined" class="icon">{{selectedAddress.icon}}</mat-icon>
                         <div class="very-small-gap"></div>
                         <span class="header-menu-text" style="max-width: 420px;">{{selectedAddress.address}}</span>
                     </div>
                 </button>
-                <mat-form-field *ngIf="inputAddressBoxEnable" (keyup.enter)="addressButtonToggle()"
+                <mat-form-field class="hide-mobile-view" *ngIf="inputAddressBoxEnable" (keyup.enter)="addressButtonToggle()"
                     style="min-width: 380px; margin-top: 10px; ">
                     <input matInput type="text" [(ngModel)]="selectedAddress.address" (blur)="addressButtonToggle()"
                         [matAutocomplete]="auto" style=" padding-bottom: 5px; font-size: 14px;">
                     <mat-icon fontSet="material-icons-outlined" matPrefix mat-icon-button class="icon"
                         style="margin-right: 5px;">{{selectedAddress.icon}}</mat-icon>
-                    <button mat-button *ngIf="selectedAddress" matSuffix mat-icon-button aria-label="Clear"
-                        (click)="selectedAddress=''">
-                        <mat-icon style="padding-bottom: 5px;">close</mat-icon>
-                    </button>
                     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
                         (selectionChange)="deliveryAddressChange($event)">
                         <mat-option *ngFor="let deliveryAddress of deliveryAddresses" [value]="deliveryAddress.address"
@@ -41,7 +37,7 @@
             </ng-container>
 
             <div class="small-gap"></div>
-            <mat-form-field appearance="none" style="min-width: 190px; margin-top: 10px;">
+            <mat-form-field class="hide-mobile-view" appearance="none" style="min-width: 190px; margin-top: 10px;">
                 <mat-select [(ngModel)]="selectedDeliveryTime" (selectionChange)="deliveryTimeSelectionChange($event)">
                     <mat-select-trigger>
                         <div class="header-menu-box" style="white-space: initial;">
@@ -89,14 +85,14 @@
                     <span class="header-menu-text">Login</span>
                 </div>
             </a>
-            <button mat-button (click)="searchButtonToggle()" *ngIf="!searchInputBoxEnable">
+            <button mat-button (click)="searchButtonToggle()" *ngIf="!searchInputBoxEnable" class="hide-mobile-view">
                 <div class="header-menu-box">
                     <mat-icon fontSet="material-icons-outlined" class="icon">search</mat-icon>
                     <div class="very-small-gap"></div>
                     <span class="header-menu-text">Search</span>
                 </div>
             </button>
-            <mat-form-field style="margin-top: 10px;" *ngIf="searchInputBoxEnable" (keyup.enter)="searchButtonToggle()"
+            <mat-form-field style="margin-top: 10px;" *ngIf="searchInputBoxEnable" (keyup.enter)="searchButtonToggle()" 
                 floatLabel="never">
                 <input matInput type="text" placeholder="What are you craving" (blur)="searchButtonToggle()"
                     [matAutocomplete]="auto" style=" padding-bottom: 5px; font-size: 14px;">

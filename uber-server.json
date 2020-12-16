@@ -26,7 +26,7 @@
       "type": "veg",
       "price": 150,
       "containt": "Full",
-      "quantity": 4
+      "quantity": 1
     },
     {
       "id": 2,
@@ -75,6 +75,28 @@
       "price": 299,
       "containt": "Full",
       "quantity": 2
+    },
+    {
+      "id": 7,
+      "name": "Tangdi Kabeb",
+      "type": "nonveg",
+      "price": 150,
+      "quantity": 3
+    },
+    {
+      "id": 8,
+      "name": "Kamli Kebab",
+      "type": "nonveg",
+      "price": 299,
+      "quantity": 4
+    },
+    {
+      "id": 9,
+      "name": "Aroma Special Veg Biryani",
+      "type": "veg",
+      "price": 150,
+      "containt": "Served With Raita and mirchi ka masala",
+      "quantity": 1
     }
   ],
   "restaurants": [
